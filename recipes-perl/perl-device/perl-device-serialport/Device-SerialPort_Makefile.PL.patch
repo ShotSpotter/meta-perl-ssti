@@ -1,0 +1,11 @@
+--- 1.04-r0-orig/Makefile.PL
++++ 1.04-r0/Makefile.PL
+@@ -134,7 +134,7 @@
+
+ # Prepare config.h
+ print "Running ./configure ...\n";
+-system("./configure");
++system("./configure --host=arm-linux-gnueabi");
+ if ($? != 0) {
+         die <<EOM;
+ The 'configure' script didn't like something.  It should have told you

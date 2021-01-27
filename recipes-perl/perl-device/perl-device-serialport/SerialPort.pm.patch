@@ -1,0 +1,11 @@
+--- 1.04-r0-orig/SerialPort.pm
++++ 1.04-r0/SerialPort.pm.mod
+@@ -302,7 +302,7 @@
+         $ok = POSIX::write($lockf, $pid, length $pid);
+         my $ok2 = POSIX::close($lockf);
+         return unless ($ok && (defined $ok2));
+-        sleep 2;	# wild guess for Version 0.05
++#       sleep 2;	# wild guess for Version 0.05
+     }
+     else {
+         $self->{LOCK} = "";

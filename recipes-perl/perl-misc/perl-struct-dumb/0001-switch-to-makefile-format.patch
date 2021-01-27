@@ -1,0 +1,35 @@
+From c8506c038c127a1f6b476aac2974875c85f0d0b4 Mon Sep 17 00:00:00 2001
+From: "Robert B. Calhoun" <rcalhoun@shotspotter.com>
+Date: Fri, 8 Jan 2021 19:36:15 +0000
+Subject: [PATCH 1/2] switch to makefile format
+
+---
+ Makefile.PL | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 Makefile.PL
+
+diff --git a/Makefile.PL b/Makefile.PL
+new file mode 100644
+index 0000000..08e65d9
+--- /dev/null
++++ b/Makefile.PL
+@@ -0,0 +1,16 @@
++use strict;
++use warnings;
++use ExtUtils::MakeMaker;
++
++WriteMakefile(
++    NAME => 'Struct::Dumb',
++    AUTHOR => 'Paul Evans <leonerd@leonerd.org.uk>',
++    LICENSE => 'perl',
++    VERSION_FROM => 'lib/Struct/Dumb.pm',
++    TEST_REQUIRES => {
++      'Test::Fatal' => 0,
++      'Test::More' => '0.88'
++    },
++    test => {TESTS => 't/*.t'},
++    );
++
+-- 
+2.17.1
+
